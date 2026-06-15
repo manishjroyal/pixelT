@@ -1062,7 +1062,7 @@ fetch("links.json")
 fetch("images.json")
   .then(response => response.json())
   .then(data => {
-    document.getElementById("img-p2").src = data.p1;
+    document.getElementById("img-p1").src = data.p1;
     document.getElementById("img-p2").src = data.p2;
     document.getElementById("img-p3").src = data.p3;
     document.getElementById("img-p4").src = data.p4;
