@@ -1038,5 +1038,25 @@ function filterCards(tag, btn) {
 }
 
 </script>
+<script>
+fetch("links.json")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("p1").href = data.p1;
+    document.getElementById("p2").href = data.p2;
+    document.getElementById("p3").href = data.p3;
+    document.getElementById("p4").href = data.p4;
+    document.getElementById("p5").href = data.p5;
+    document.getElementById("p6").href = data.p6;
+    document.getElementById("p7").href = data.p7;
+    document.getElementById("p8").href = data.p8;
+    document.getElementById("p9").href = data.p9;
+    document.getElementById("p10").href = data.p10;
+    document.getElementById("p11").href = data.p11;
+    document.getElementById("p12").href = data.p12;
+    document.getElementById("p13").href = data.p13;
+    document.getElementById("p14").href = data.p14;
+  });
+</script>
 </body>
 </html>
