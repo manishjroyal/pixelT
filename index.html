@@ -1062,7 +1062,7 @@ fetch("links.json")
 fetch("images.json")
   .then(response => response.json())
   .then(data => {
-    document.getElementById("https://m.media-amazon.com/images/I/61WYx598KKL._AC_UL480_FMwebp_QL65_.jpg").src = data.p1;
+    document.getElementById("img-p2").src = data.p1;
     document.getElementById("img-p2").src = data.p2;
     document.getElementById("img-p3").src = data.p3;
     document.getElementById("img-p4").src = data.p4;
