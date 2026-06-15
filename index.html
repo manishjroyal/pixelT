@@ -1058,5 +1058,25 @@ fetch("links.json")
     document.getElementById("p14").href = data.p14;
   });
 </script>
+   <script>
+fetch("images.json")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("img-p1").src = data.p1;
+    document.getElementById("img-p2").src = data.p2;
+    document.getElementById("img-p3").src = data.p3;
+    document.getElementById("img-p4").src = data.p4;
+    document.getElementById("img-p5").src = data.p5;
+    document.getElementById("img-p6").src = data.p6;
+    document.getElementById("img-p7").src = data.p7;
+    document.getElementById("img-p8").src = data.p8;
+    document.getElementById("img-p9").src = data.p9;
+    document.getElementById("img-p10").src = data.p10;
+    document.getElementById("img-p11").src = data.p11;
+    document.getElementById("img-p12").src = data.p12;
+    document.getElementById("img-p13").src = data.p13;
+    document.getElementById("img-p14").src = data.p14;
+  });
+</script>
 </body>
 </html>
