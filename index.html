@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -9,44 +8,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
 <style>
 
-/* =============================================
-   THEME VARIABLES
-   ============================================= */
 [data-theme="light"] {
-  --bg:          #ffffff;
-  --bg-soft:     #f7f7f5;
-  --bg-card:     #ffffff;
-  --border:      #ebebeb;
-  --ink:         #111111;
-  --mid:         #555555;
-  --light:       #999999;
-  --accent:      #ff9900;   /* Amazon orange */
-  --accent-dark: #e47911;
-  --badge-new:   #22c55e;
-  --badge-hot:   #ef4444;
-  --shadow:      0 2px 12px rgba(0,0,0,.07);
-  --shadow-h:    0 8px 28px rgba(0,0,0,.12);
+  --bg:       #ffffff;
+  --bg-soft:  #f7f7f5;
+  --bg-card:  #ffffff;
+  --border:   #ebebeb;
+  --ink:      #111111;
+  --mid:      #555555;
+  --light:    #999999;
+  --accent:   #ff9900;
+  --accent-d: #e47911;
+  --shadow:   0 2px 12px rgba(0,0,0,.07);
+  --shadow-h: 0 8px 28px rgba(0,0,0,.12);
 }
 
 [data-theme="dark"] {
-  --bg:          #0f0f0f;
-  --bg-soft:     #1a1a1a;
-  --bg-card:     #1e1e1e;
-  --border:      #2a2a2a;
-  --ink:         #f0f0f0;
-  --mid:         #aaaaaa;
-  --light:       #666666;
-  --accent:      #ff9900;
-  --accent-dark: #ffa724;
-  --badge-new:   #22c55e;
-  --badge-hot:   #ef4444;
-  --shadow:      0 2px 12px rgba(0,0,0,.4);
-  --shadow-h:    0 8px 28px rgba(0,0,0,.6);
+  --bg:       #0f0f0f;
+  --bg-soft:  #1a1a1a;
+  --bg-card:  #1e1e1e;
+  --border:   #2a2a2a;
+  --ink:      #f0f0f0;
+  --mid:      #aaaaaa;
+  --light:    #666666;
+  --accent:   #ff9900;
+  --accent-d: #ffa724;
+  --shadow:   0 2px 12px rgba(0,0,0,.4);
+  --shadow-h: 0 8px 28px rgba(0,0,0,.6);
 }
 
-/* =============================================
-   RESET & BASE
-   ============================================= */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -58,468 +47,168 @@ body {
 }
 
 a { text-decoration: none; color: inherit; }
-
 img { display: block; max-width: 100%; }
 
-/* =============================================
-   NAVIGATION
-   ============================================= */
+/* NAV */
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5vw;
-  height: 62px;
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 62px;
   transition: background .25s, border-color .25s;
 }
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 900;
-  letter-spacing: -1px;
-  color: var(--ink);
-}
-
+.logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; letter-spacing: -1px; }
 .logo span { color: var(--accent); }
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  font-size: .85rem;
-  font-weight: 500;
-  color: var(--mid);
-  transition: color .2s;
-}
-
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a { font-size: .85rem; font-weight: 500; color: var(--mid); transition: color .2s; }
 .nav-links a:hover { color: var(--ink); }
-
-/* Dark / Light toggle button */
 .theme-toggle {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1.5px solid var(--border);
-  background: var(--bg-soft);
-  cursor: pointer;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background .2s, border-color .2s;
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1.5px solid var(--border); background: var(--bg-soft);
+  cursor: pointer; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color .2s;
 }
-
 .theme-toggle:hover { border-color: var(--accent); }
 
-/* =============================================
-   HERO BANNER
-   ============================================= */
+/* HERO */
 .hero {
-  background: var(--bg-soft);
-  padding: 60px 5vw 56px;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-soft); padding: 60px 5vw 56px;
+  text-align: center; border-bottom: 1px solid var(--border);
 }
-
 .hero-eyebrow {
-  display: inline-block;
-  background: var(--accent);
-  color: #fff;
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 100px;
-  margin-bottom: 1.25rem;
+  display: inline-block; background: var(--accent); color: #fff;
+  font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 1.25rem;
 }
-
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 5vw, 3.8rem);
-  font-weight: 900;
-  letter-spacing: -2px;
-  line-height: 1.05;
-  margin-bottom: 1rem;
-  color: var(--ink);
+  font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 900;
+  letter-spacing: -2px; line-height: 1.05; margin-bottom: 1rem;
 }
-
-.hero h1 em {
-  font-style: italic;
-  color: var(--accent);
-}
-
-.hero p {
-  font-size: 1rem;
-  color: var(--mid);
-  max-width: 500px;
-  margin: 0 auto 2rem;
-}
-
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero p { font-size: 1rem; color: var(--mid); max-width: 500px; margin: 0 auto 2rem; }
 .hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: .6rem;
-  background: var(--accent);
-  color: #fff;
-  font-size: .9rem;
-  font-weight: 700;
-  padding: 13px 28px;
-  border-radius: 10px;
+  display: inline-flex; align-items: center; gap: .6rem;
+  background: var(--accent); color: #fff;
+  font-size: .9rem; font-weight: 700; padding: 13px 28px; border-radius: 10px;
   transition: background .2s, transform .2s;
 }
+.hero-cta:hover { background: var(--accent-d); transform: translateY(-2px); }
 
-.hero-cta:hover {
-  background: var(--accent-dark);
-  transform: translateY(-2px);
-}
-
-/* =============================================
-   SECTION WRAPPER
-   ============================================= */
-.section {
-  padding: 56px 5vw;
-}
-
+/* SECTIONS */
+.section { padding: 56px 5vw; }
 .section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
 }
-
 .section-header h2 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 900;
-  letter-spacing: -1px;
-  color: var(--ink);
+  font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 900; letter-spacing: -1px;
 }
 
-/* =============================================
-   FILTER BAR
-   ============================================= */
-.filter-bar {
-  display: flex;
-  gap: .4rem;
-  flex-wrap: wrap;
-}
-
+/* FILTER */
+.filter-bar { display: flex; gap: .4rem; flex-wrap: wrap; }
 .filter-btn {
-  padding: 6px 15px;
-  border-radius: 100px;
-  border: 1.5px solid var(--border);
-  background: transparent;
-  color: var(--mid);
-  font-size: .78rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all .2s;
-  font-family: 'Inter', sans-serif;
+  padding: 6px 15px; border-radius: 100px;
+  border: 1.5px solid var(--border); background: transparent;
+  color: var(--mid); font-size: .78rem; font-weight: 500;
+  cursor: pointer; transition: all .2s; font-family: 'Inter', sans-serif;
 }
-
-.filter-btn:hover  { border-color: var(--accent); color: var(--accent); }
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
 .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-/* =============================================
-   PRODUCTS GRID
-   ============================================= */
+/* GRID */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.25rem;
 }
 
-/* =============================================
-   PRODUCT CARD
-   ============================================= */
+/* CARD */
 .product-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden;
   transition: transform .22s, box-shadow .22s, border-color .22s;
-  display: flex;
-  flex-direction: column;
+  display: flex; flex-direction: column;
 }
+.product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-h); border-color: var(--accent); }
 
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-h);
-  border-color: var(--accent);
-}
-
-/* Product image area */
 .product-img {
-  aspect-ratio: 1 / 1;
-  background: var(--bg-soft);
-  overflow: hidden;
-  position: relative;
+  aspect-ratio: 1 / 1; background: var(--bg-soft);
+  overflow: hidden; position: relative;
 }
+.product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+.product-card:hover .product-img img { transform: scale(1.04); }
 
-.product-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .35s;
-}
-
-.product-card:hover .product-img img {
-  transform: scale(1.04);
-}
-
-/* Placeholder when no image */
-.product-img-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.5rem;
-  color: var(--light);
-}
-
-/* Badges */
 .badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: .62rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 100px;
-  color: #fff;
+  position: absolute; top: 10px; left: 10px;
+  font-size: .62rem; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 100px; color: #fff;
 }
+.badge-hot { background: #ef4444; }
+.badge-new { background: #22c55e; }
+.badge-top { background: #8b5cf6; }
 
-.badge-hot { background: var(--badge-hot); }
-.badge-new { background: var(--badge-new); }
-
-/* Discount % bubble */
 .discount-bubble {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--accent);
-  color: #fff;
-  font-size: .65rem;
-  font-weight: 700;
-  padding: 4px 7px;
-  border-radius: 8px;
+  position: absolute; top: 10px; right: 10px;
+  background: var(--accent); color: #fff;
+  font-size: .65rem; font-weight: 700; padding: 4px 7px; border-radius: 8px;
 }
 
-/* Product body */
-.product-body {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: .4rem;
-}
+.product-body { padding: 1rem; display: flex; flex-direction: column; flex: 1; gap: .4rem; }
+.product-brand { font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--light); }
+.product-name { font-size: .88rem; font-weight: 600; color: var(--ink); line-height: 1.35; }
 
-.product-brand {
-  font-size: .68rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--light);
-}
-
-.product-name {
-  font-size: .88rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.35;
-}
-
-/* Star rating */
-.stars {
-  display: flex;
-  align-items: center;
-  gap: .3rem;
-  font-size: .75rem;
-  color: var(--accent);
-}
-
+.stars { display: flex; align-items: center; gap: .3rem; font-size: .75rem; color: var(--accent); }
 .stars .count { color: var(--light); font-size: .7rem; }
 
-/* Price */
-.price-row {
-  display: flex;
-  align-items: baseline;
-  gap: .4rem;
-  flex-wrap: wrap;
-}
+.price-row { display: flex; align-items: baseline; gap: .4rem; flex-wrap: wrap; }
+.price-now { font-size: 1.1rem; font-weight: 700; }
+.price-was { font-size: .78rem; color: var(--light); text-decoration: line-through; }
 
-.price-now {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.price-was {
-  font-size: .78rem;
-  color: var(--light);
-  text-decoration: line-through;
-}
-
-/* Amazon buy button */
 .btn-amazon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  background: var(--accent);
-  color: #fff;
-  font-size: .8rem;
-  font-weight: 700;
-  padding: 9px 14px;
-  border-radius: 8px;
-  margin-top: auto;
-  transition: background .2s, transform .15s;
-  font-family: 'Inter', sans-serif;
+  display: flex; align-items: center; justify-content: center; gap: .5rem;
+  background: var(--accent); color: #fff;
+  font-size: .8rem; font-weight: 700; padding: 9px 14px; border-radius: 8px;
+  margin-top: auto; transition: background .2s, transform .15s; font-family: 'Inter', sans-serif;
 }
+.btn-amazon:hover { background: var(--accent-d); transform: translateY(-1px); }
+.amz-logo { font-size: .65rem; opacity: .85; font-weight: 400; }
 
-.btn-amazon:hover {
-  background: var(--accent-dark);
-  transform: translateY(-1px);
-}
-
-/* Amazon logo text inside button */
-.amz-logo {
-  font-size: .65rem;
-  opacity: .9;
-  font-weight: 400;
-}
-
-/* =============================================
-   FEATURED BANNER (between sections)
-   ============================================= */
+/* BANNER */
 .banner {
   margin: 0 5vw;
   background: linear-gradient(135deg, #ff9900 0%, #e47911 100%);
-  border-radius: 16px;
-  padding: 2.5rem 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
+  border-radius: 16px; padding: 2.5rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
 }
-
-.banner-text h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: -.5px;
-  margin-bottom: .4rem;
-}
-
-.banner-text p {
-  font-size: .88rem;
-  color: rgba(255,255,255,.85);
-}
-
+.banner h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; letter-spacing: -.5px; margin-bottom: .4rem; }
+.banner p { font-size: .88rem; color: rgba(255,255,255,.85); }
 .btn-banner {
-  background: #fff;
-  color: #e47911;
-  font-size: .85rem;
-  font-weight: 700;
-  padding: 11px 24px;
-  border-radius: 9px;
-  white-space: nowrap;
+  background: #fff; color: #e47911; font-size: .85rem; font-weight: 700;
+  padding: 11px 24px; border-radius: 9px; white-space: nowrap;
   transition: transform .2s, box-shadow .2s;
 }
+.btn-banner:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.15); }
 
-.btn-banner:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,.15);
-}
-
-/* =============================================
-   FOOTER
-   ============================================= */
-footer {
-  background: var(--bg-soft);
-  border-top: 1px solid var(--border);
-  padding: 40px 5vw 24px;
-  margin-top: 4rem;
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 2rem;
-}
-
-.footer-brand .logo { font-size: 1.2rem; margin-bottom: .6rem; display: block; }
-.footer-brand p { font-size: .8rem; color: var(--mid); max-width: 260px; line-height: 1.6; }
-
-footer h4 {
-  font-size: .75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--light);
-  margin-bottom: .9rem;
-}
-
+/* FOOTER */
+footer { background: var(--bg-soft); border-top: 1px solid var(--border); padding: 40px 5vw 24px; margin-top: 4rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
+.footer-brand p { font-size: .8rem; color: var(--mid); max-width: 260px; line-height: 1.6; margin-top: .5rem; }
+footer h4 { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--light); margin-bottom: .9rem; }
 footer ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
 footer ul a { font-size: .82rem; color: var(--mid); transition: color .2s; }
 footer ul a:hover { color: var(--accent); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; font-size: .75rem; color: var(--light); }
+.affiliate-note { font-size: .72rem; color: var(--mid); background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: .75rem 1rem; margin-bottom: 1.5rem; line-height: 1.6; }
 
-.footer-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: .5rem;
-  font-size: .75rem;
-  color: var(--light);
-}
-
-.affiliate-note {
-  font-size: .72rem;
-  color: var(--light);
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: .75rem 1rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-/* =============================================
-   RESPONSIVE
-   ============================================= */
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
   .banner { padding: 1.75rem; }
-  .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
 }
-
 @media (max-width: 480px) {
   .products-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -528,555 +217,501 @@ footer ul a:hover { color: var(--accent); }
 </head>
 <body>
 
-<!-- =============================================
-     NAVIGATION
-     ============================================= -->
+<!-- NAV — built from SITE_CONFIG below -->
 <nav>
-
-  <span class="logo">pixelT<span>.</span></span>
-
-  <div class="nav-links">
-    <a href="#trending">Trending</a>
-    <a href="#budget">Budget Picks</a>
-    <a href="#premium">Premium</a>
-  </div>
-
-  <div class="nav-right">
-    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode" id="themeBtn">🌙</button>
-  </div>
-
+  <span class="logo" id="siteLogo"></span>
+  <div class="nav-links" id="navLinks"></div>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
 </nav>
 
-
-<!-- =============================================
-     HERO
-     ============================================= -->
+<!-- HERO — built from SITE_CONFIG below -->
 <section class="hero">
-
-  <span class="hero-eyebrow">Amazon Affiliate Store</span>
-
-  <h1>Find Your Perfect<br><em>T-Shirt</em> on Amazon</h1>
-
-  <p>Handpicked T-shirts with the best deals, ratings, and styles — all available on Amazon India.</p>
-
-  <a href="#trending" class="hero-cta">
-    🛍 Browse Deals
-  </a>
-
+  <span class="hero-eyebrow" id="heroEyebrow"></span>
+  <h1 id="heroTitle"></h1>
+  <p id="heroSubtitle"></p>
+  <a href="#trending" class="hero-cta">🛍 Browse Deals</a>
 </section>
 
+<!-- PRODUCT SECTIONS — built by JS -->
+<div id="allSections"></div>
 
-<!-- =============================================
-     SECTION 1 — TRENDING PICKS
-     To add/edit products: find this section and
-     copy-paste a product card block.
-     ============================================= -->
-<section class="section" id="trending">
-
-  <div class="section-header">
-    <h2>🔥 Trending Picks</h2>
-    <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
-      <button class="filter-btn" onclick="filterCards('men', this)">Men</button>
-      <button class="filter-btn" onclick="filterCards('women', this)">Women</button>
-      <button class="filter-btn" onclick="filterCards('unisex', this)">Unisex</button>
-    </div>
-  </div>
-
-  <div class="products-grid" id="trendingGrid">
-
-    <!-- ═══════════════════════════════════
-         PRODUCT CARD — Copy this block to add more products
-         ═══════════════════════════════════ -->
-    <div class="product-card" data-tag="men">
-      <div class="product-img">
-        <!-- Replace the src below with your product image URL -->
-        <img id="img-p1" src="img-p1" alt="Product 1">
-        <span class="badge badge-hot">Hot</span>
-        <span class="discount-bubble">-40%</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Roadster</div>
-        <div class="product-name">Men's Slim Fit Round Neck T-Shirt</div>
-        <div class="stars">★★★★☆ <span class="count">(4,281)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹399</span>
-          <span class="price-was">₹699</span>
-        </div>
-        <!-- Replace # with your Amazon affiliate link -->
-        <a id="p1" href="p1" target="_blank" class="btn-amazon"></a>
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 2 -->
-    <div class="product-card" data-tag="women">
-      <div class="product-img">
-        <img id="img-p2" src="" alt="Product 2">
-        <span class="badge badge-new">New</span>
-        <span class="discount-bubble">-35%</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Bewakoof</div>
-        <div class="product-name">Women's Graphic Printed Oversized T-Shirt</div>
-        <div class="stars">★★★★★ <span class="count">(2,104)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹349</span>
-          <span class="price-was">₹549</span>
-        </div>
-        <a id="p2" href="p2" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 3 -->
-    <div class="product-card" data-tag="unisex">
-      <div class="product-img">
-        <img id="img-p3" src="img-p3" alt="Product 3">
-        <span class="discount-bubble">-25%</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Amazon Brand - Symbol</div>
-        <div class="product-name">Unisex Solid 100% Cotton Plain T-Shirt</div>
-        <div class="stars">★★★★☆ <span class="count">(8,912)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹279</span>
-          <span class="price-was">₹399</span>
-        </div>
-       <a id="p3" href="p3" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 4 -->
-    <div class="product-card" data-tag="men">
-      <div class="product-img">
-        <img id="img-p1" src="img-p4" alt="Product 4">
-        <span class="badge badge-hot">Bestseller</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">US Polo Assn.</div>
-        <div class="product-name">Men's Regular Fit Polo T-Shirt</div>
-        <div class="stars">★★★★★ <span class="count">(11,230)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹799</span>
-          <span class="price-was">₹1,199</span>
-        </div>
-        <a id="p4" href="p4" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 5 -->
-    <div class="product-card" data-tag="women">
-      <div class="product-img">
-        <img id="img-p1" src="img-p5" alt="Product 5">
-        <span class="badge badge-new">New</span>
-        <span class="discount-bubble">-50%</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Urbanic</div>
-        <div class="product-name">Women's Crop Fit Ribbed T-Shirt</div>
-        <div class="stars">★★★★☆ <span class="count">(986)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹449</span>
-          <span class="price-was">₹899</span>
-        </div>
-       <a id="p5" href="p5" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 6 -->
-    <div class="product-card" data-tag="unisex">
-      <div class="product-img">
-        <img id="img-p1" src="img-p6" alt="Product 6">
-        <span class="discount-bubble">-30%</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">The Souled Store</div>
-        <div class="product-name">Unisex Oversized Drop Shoulder T-Shirt</div>
-        <div class="stars">★★★★★ <span class="count">(3,450)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹599</span>
-          <span class="price-was">₹849</span>
-        </div>
-        <a id="p6" href="p6" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-  </div><!-- /products-grid -->
-</section>
-
-
-<!-- =============================================
-     BANNER
-     ============================================= -->
-<div class="banner">
-  <div class="banner-text">
-    <h3>Amazon Great Indian Festival</h3>
-    <p>Up to 70% off on branded T-shirts. Limited time deals — don't miss out!</p>
-  </div>
-  <!-- Replace # with your Amazon affiliate sale page link -->
-  <a href="https://www.amazon.in/deals?tag=REPLACE_WITH_TAG" target="_blank" class="btn-banner">
-    Shop the Sale →
-  </a>
-</div>
-
-
-<!-- =============================================
-     SECTION 2 — BUDGET PICKS (under ₹299)
-     ============================================= -->
-<section class="section" id="budget">
-
-  <div class="section-header">
-    <h2>💸 Budget Picks — Under ₹299</h2>
-  </div>
-
-  <div class="products-grid">
-
-    <!-- PRODUCT CARD 7 -->
-    <div class="product-card" data-tag="men">
-      <div class="product-img">
-       <img id="img-p1" src="img-p7" alt="Product 7">
-        <span class="badge badge-hot">Best Value</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Glito</div>
-        <div class="product-name">Men's Pack of 3 Plain Half Sleeve T-Shirts</div>
-        <div class="stars">★★★★☆ <span class="count">(99+)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹249</span>
-          <span class="price-was">₹499</span>
-        </div>
-        <a id="p7" href="p7" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 8 -->
-    <div class="product-card" data-tag="women">
-      <div class="product-img">
-        <img id="img-p8" src="img-p8" alt="Product 8">
-        <span class="discount-bubble">-55%</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Nykd</div>
-        <div class="product-name">Women's Cotton Lounge T-Shirt</div>
-        <div class="stars">★★★★☆ <span class="count">(1,788)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹269</span>
-          <span class="price-was">₹599</span>
-        </div>
-        <a id="p8" href="p8" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 9 -->
-    <div class="product-card" data-tag="unisex">
-      <div class="product-img">
-        <img id="img-p9" src="img-p9" alt="Product 9">
-        <span class="badge badge-new">New</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Amazon Basics</div>
-        <div class="product-name">Unisex Regular-Fit Short-Sleeve Crewneck T-Shirt</div>
-        <div class="stars">★★★★★ <span class="count">(22,410)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹299</span>
-          <span class="price-was">₹449</span>
-        </div>
-        <a id="p9" href="p9" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 10 -->
-    <div class="product-card" data-tag="men">
-      <div class="product-img">
-        <img id="img-p10" src="img-p10" alt="Product 10">
-        <span class="discount-bubble">-40%</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">H&M</div>
-        <div class="product-name">Men's Striped Jersey T-Shirt</div>
-        <div class="stars">★★★★☆ <span class="count">(3,012)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹279</span>
-          <span class="price-was">₹499</span>
-        </div>
-        <a id="p10" href="p10" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-  </div>
-</section>
-
-
-<!-- =============================================
-     SECTION 3 — PREMIUM PICKS (₹999+)
-     ============================================= -->
-<section class="section" id="premium">
-
-  <div class="section-header">
-    <h2>✨ Premium Picks — ₹999+</h2>
-  </div>
-
-  <div class="products-grid">
-
-    <!-- PRODUCT CARD 11 -->
-    <div class="product-card" data-tag="men">
-      <div class="product-img">
-        <img id="img-p11" src="img-p11" alt="Product 11">
-        <span class="badge badge-hot">Premium</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Lacoste</div>
-        <div class="product-name">Men's Classic Petit Piqué Polo T-Shirt</div>
-        <div class="stars">★★★★★ <span class="count">(1,540)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹999</span>
-          <span class="price-was">₹6,995</span>
-        </div>
-        <a id="p11" href="p11" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 12 -->
-    <div class="product-card" data-tag="men">
-      <div class="product-img">
-        <img id="img-p12" src="img-p12" alt="Product 12">
-        <span class="discount-bubble">-20%</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Calvin Klein</div>
-        <div class="product-name">Men's Institutional Logo T-Shirt</div>
-        <div class="stars">★★★★★ <span class="count">(892)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹2,199</span>
-          <span class="price-was">₹2,799</span>
-        </div>
-        <a id="p12" href="p12" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 13 -->
-    <div class="product-card" data-tag="women">
-      <div class="product-img">
-        <img id="img-p13" src="img-p13" alt="Product 13">
-        <span class="badge badge-new">New</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Levi's</div>
-        <div class="product-name">Women's Relaxed Fit Batwing Logo T-Shirt</div>
-        <div class="stars">★★★★★ <span class="count">(2,318)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹1,199</span>
-          <span class="price-was">₹1,799</span>
-        </div><a id="p13" href="p13" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-    <!-- PRODUCT CARD 14 -->
-    <div class="product-card" data-tag="unisex">
-      <div class="product-img">
-        <img id="img-p14" src="img-p14" alt="Product 14">
-        <span class="discount-bubble">-15%</span>
-      </div>
-      <div class="product-body">
-        <div class="product-brand">Tommy Hilfiger</div>
-        <div class="product-name">Regular Fit Essential Flag Logo T-Shirt</div>
-        <div class="stars">★★★★★ <span class="count">(4,771)</span></div>
-        <div class="price-row">
-          <span class="price-now">₹1,999</span>
-          <span class="price-was">₹2,399</span>
-        </div>
-       <a id="p14" href="p14" target="_blank" class="btn-amazon">
-          Buy on Amazon <span class="amz-logo">amazon</span>
-        </a>
-      </div>
-    </div>
-    <!-- ═══════════════════════════════════ -->
-
-
-  </div>
-</section>
-
-
-<!-- =============================================
-     FOOTER
-     ============================================= -->
+<!-- FOOTER — built from SITE_CONFIG below -->
 <footer>
-
-  <div class="affiliate-note">
-    ⚠ <strong>Affiliate Disclosure:</strong> pixelT is a participant in the Amazon Associates Programme.
-    We earn a small commission on qualifying purchases at no extra cost to you.
-    Prices and availability are subject to change. Please verify on Amazon before purchasing.
-  </div>
-
+  <div class="affiliate-note" id="affiliateNote"></div>
   <div class="footer-top">
     <div class="footer-brand">
-      <span class="logo">pixelT<span>.</span></span>
-      <p>Your go-to guide for the best T-shirt deals on Amazon India. Curated with love from Jaipur. 🏰</p>
+      <span class="logo" id="footerLogo"></span>
+      <p id="footerDesc"></p>
     </div>
     <div>
       <h4>Browse</h4>
-      <ul>
-        <li><a href="#trending">Trending</a></li>
-        <li><a href="#budget">Budget Picks</a></li>
-        <li><a href="#premium">Premium</a></li>
-      </ul>
+      <ul id="footerBrowse"></ul>
     </div>
     <div>
       <h4>Info</h4>
       <ul>
-        <li><a href="#">About pixelT</a></li>
+        <li><a href="#">About</a></li>
         <li><a href="#">Affiliate Disclosure</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
   </div>
-
   <div class="footer-bottom">
-    <span>© 2025 pixelT. All rights reserved.</span>
+    <span id="footerCopy"></span>
     <span>Powered by Amazon Associates</span>
   </div>
-
 </footer>
 
 
-<!-- =============================================
-     JAVASCRIPT — Dark/Light toggle + Filter
-     ============================================= -->
 <script>
+/* ============================================================
 
-/* ── DARK / LIGHT MODE ── */
+   ██████╗ ██╗██╗  ██╗███████╗██╗  ████████╗
+   ██╔══██╗██║╚██╗██╔╝██╔════╝██║  ╚══██╔══╝
+   ██████╔╝██║ ╚███╔╝ █████╗  ██║     ██║
+   ██╔═══╝ ██║ ██╔██╗ ██╔══╝  ██║     ██║
+   ██║     ██║██╔╝ ██╗███████╗███████╗██║
+   ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝
+
+   ============================================================
+   HOW TO EDIT:
+   1. Change site name, tagline, etc. in SITE_CONFIG
+   2. Add / remove / edit products in SECTIONS below
+   3. Each product has: name, brand, image, link, price,
+      originalPrice, stars, reviews, badge, tag
+   ============================================================ */
+
+
+/* ============================================================
+   SECTION 1 — SITE SETTINGS
+   ============================================================ */
+const SITE_CONFIG = {
+
+  name:       "pixelT",           // Site name shown in nav & footer
+  tagline:    "Best T-Shirt Deals on Amazon",  // Browser tab title
+  eyebrow:    "Amazon Affiliate Store",        // Small label above hero title
+
+  heroTitle:  'Find Your Perfect <em>T-Shirt</em> on Amazon',
+  heroSub:    "Handpicked T-shirts with the best deals, ratings, and styles — all on Amazon India.",
+
+  footerDesc: "Your go-to guide for the best T-shirt deals on Amazon India. Curated with love from Jaipur. 🏰",
+  copyright:  "© 2025 pixelT. All rights reserved.",
+
+  affiliateTag: "REPLACE_WITH_YOUR_TAG",   // Your Amazon Associates tag e.g. pixelt-21
+
+  affiliateNote: "⚠ Affiliate Disclosure: pixelT earns a small commission on qualifying Amazon purchases at no extra cost to you. Prices and availability are subject to change — please verify on Amazon before buying.",
+
+  /* Mid-page sale banner */
+  banner: {
+    title:    "Amazon Great Indian Festival",
+    subtitle: "Up to 70% off on branded T-shirts. Limited time — don't miss out!",
+    btnText:  "Shop the Sale →",
+    link:     "https://www.amazon.in/deals?tag=REPLACE_WITH_YOUR_TAG",
+  },
+
+};
+
+
+/* ============================================================
+   SECTION 2 — PRODUCTS
+   ============================================================
+   Each SECTION has:
+     id       — used for nav anchor links (no spaces)
+     title    — shown as the section heading
+     filter   — true = show Men/Women/Unisex filter bar
+     products — array of product objects
+
+   Each PRODUCT has:
+     name          — product title shown on card
+     brand         — brand name shown above title
+     image         — full image URL (Amazon or your own CDN)
+     link          — Amazon affiliate URL (add your tag here)
+     price         — selling price e.g. "₹399"
+     originalPrice — crossed-out price e.g. "₹699"  (leave "" to hide)
+     discount      — discount label e.g. "-40%"      (leave "" to hide)
+     stars         — rating string e.g. "★★★★☆"
+     reviews       — review count e.g. "4,281"
+     badge         — "hot" | "new" | "top" | ""       (leave "" to hide)
+     tag           — "men" | "women" | "unisex"       (used by filter)
+   ============================================================ */
+
+const SECTIONS = [
+
+  /* ── TRENDING PICKS ─────────────────────────────────────── */
+  {
+    id:     "trending",
+    title:  "🔥 Trending Picks",
+    filter: true,
+    products: [
+
+      {
+        name:          "Men's Slim Fit Round Neck T-Shirt",
+        brand:         "Roadster",
+        image:         "https://m.media-amazon.com/images/I/31t8JxLPIPL.jpg",
+        link:          "https://amzn.to/4eacTE3",
+        price:         "₹399",
+        originalPrice: "₹699",
+        discount:      "-40%",
+        stars:         "★★★★☆",
+        reviews:       "4,281",
+        badge:         "hot",
+        tag:           "men",
+      },
+
+      {
+        name:          "Women's Graphic Printed Oversized T-Shirt",
+        brand:         "Bewakoof",
+        image:         "https://m.media-amazon.com/images/I/61ys4YNkFzL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹349",
+        originalPrice: "₹549",
+        discount:      "-35%",
+        stars:         "★★★★★",
+        reviews:       "2,104",
+        badge:         "new",
+        tag:           "women",
+      },
+
+      {
+        name:          "Unisex Solid 100% Cotton Plain T-Shirt",
+        brand:         "Amazon Brand - Symbol",
+        image:         "https://m.media-amazon.com/images/I/61PJuNJTLeL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹279",
+        originalPrice: "₹399",
+        discount:      "-25%",
+        stars:         "★★★★☆",
+        reviews:       "8,912",
+        badge:         "",
+        tag:           "unisex",
+      },
+
+      {
+        name:          "Men's Regular Fit Polo T-Shirt",
+        brand:         "US Polo Assn.",
+        image:         "https://m.media-amazon.com/images/I/81MbJYLnkKL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹799",
+        originalPrice: "₹1,199",
+        discount:      "",
+        stars:         "★★★★★",
+        reviews:       "11,230",
+        badge:         "hot",
+        tag:           "men",
+      },
+
+      {
+        name:          "Women's Crop Fit Ribbed T-Shirt",
+        brand:         "Urbanic",
+        image:         "https://m.media-amazon.com/images/I/71Rk4MIQIYL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹449",
+        originalPrice: "₹899",
+        discount:      "-50%",
+        stars:         "★★★★☆",
+        reviews:       "986",
+        badge:         "new",
+        tag:           "women",
+      },
+
+      {
+        name:          "Unisex Oversized Drop Shoulder T-Shirt",
+        brand:         "The Souled Store",
+        image:         "https://m.media-amazon.com/images/I/71z3Pd3wznL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹599",
+        originalPrice: "₹849",
+        discount:      "-30%",
+        stars:         "★★★★★",
+        reviews:       "3,450",
+        badge:         "",
+        tag:           "unisex",
+      },
+
+    ],
+  },
+
+
+  /* ── BUDGET PICKS ───────────────────────────────────────── */
+  {
+    id:     "budget",
+    title:  "💸 Budget Picks — Under ₹299",
+    filter: false,
+    products: [
+
+      {
+        name:          "Men's Pack of 3 Plain Half Sleeve T-Shirts",
+        brand:         "Glito",
+        image:         "https://m.media-amazon.com/images/I/71aNdmBMsLL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹249",
+        originalPrice: "₹499",
+        discount:      "-50%",
+        stars:         "★★★★☆",
+        reviews:       "5,601",
+        badge:         "hot",
+        tag:           "men",
+      },
+
+      {
+        name:          "Women's Cotton Lounge T-Shirt",
+        brand:         "Nykd",
+        image:         "https://m.media-amazon.com/images/I/61bRkbFZ4tL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹269",
+        originalPrice: "₹599",
+        discount:      "-55%",
+        stars:         "★★★★☆",
+        reviews:       "1,788",
+        badge:         "",
+        tag:           "women",
+      },
+
+      {
+        name:          "Unisex Regular-Fit Short-Sleeve Crewneck T-Shirt",
+        brand:         "Amazon Basics",
+        image:         "https://m.media-amazon.com/images/I/71oK5WQ9vQL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹299",
+        originalPrice: "₹449",
+        discount:      "",
+        stars:         "★★★★★",
+        reviews:       "22,410",
+        badge:         "top",
+        tag:           "unisex",
+      },
+
+      {
+        name:          "Men's Striped Jersey T-Shirt",
+        brand:         "H&M",
+        image:         "https://m.media-amazon.com/images/I/71WxBSLrnwL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹279",
+        originalPrice: "₹499",
+        discount:      "-40%",
+        stars:         "★★★★☆",
+        reviews:       "3,012",
+        badge:         "",
+        tag:           "men",
+      },
+
+    ],
+  },
+
+
+  /* ── PREMIUM PICKS ──────────────────────────────────────── */
+  {
+    id:     "premium",
+    title:  "✨ Premium Picks — ₹999+",
+    filter: false,
+    products: [
+
+      {
+        name:          "Men's Classic Petit Piqué Polo T-Shirt",
+        brand:         "Lacoste",
+        image:         "https://m.media-amazon.com/images/I/71QH7VtdwfL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹4,999",
+        originalPrice: "₹6,995",
+        discount:      "-28%",
+        stars:         "★★★★★",
+        reviews:       "1,540",
+        badge:         "top",
+        tag:           "men",
+      },
+
+      {
+        name:          "Men's Institutional Logo T-Shirt",
+        brand:         "Calvin Klein",
+        image:         "https://m.media-amazon.com/images/I/61WDuOFSwjL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹2,199",
+        originalPrice: "₹2,799",
+        discount:      "-20%",
+        stars:         "★★★★★",
+        reviews:       "892",
+        badge:         "",
+        tag:           "men",
+      },
+
+      {
+        name:          "Women's Relaxed Fit Batwing Logo T-Shirt",
+        brand:         "Levi's",
+        image:         "https://m.media-amazon.com/images/I/71U-TxCRFxL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹1,199",
+        originalPrice: "₹1,799",
+        discount:      "-33%",
+        stars:         "★★★★★",
+        reviews:       "2,318",
+        badge:         "new",
+        tag:           "women",
+      },
+
+      {
+        name:          "Regular Fit Essential Flag Logo T-Shirt",
+        brand:         "Tommy Hilfiger",
+        image:         "https://m.media-amazon.com/images/I/71yAtdkMvRL._UX679_.jpg",
+        link:          "https://www.amazon.in/dp/REPLACE_ASIN?tag=REPLACE_TAG",
+        price:         "₹1,999",
+        originalPrice: "₹2,399",
+        discount:      "-15%",
+        stars:         "★★★★★",
+        reviews:       "4,771",
+        badge:         "",
+        tag:           "unisex",
+      },
+
+    ],
+  },
+
+];
+
+
+/* ============================================================
+   SECTION 3 — RENDER ENGINE  (no need to edit below)
+   ============================================================ */
+
+/* ── Build a single product card ── */
+function buildCard(p, showFilter) {
+  const badgeHTML = p.badge
+    ? `<span class="badge badge-${p.badge}">${p.badge}</span>` : '';
+
+  const discountHTML = p.discount
+    ? `<span class="discount-bubble">${p.discount}</span>` : '';
+
+  const originalHTML = p.originalPrice
+    ? `<span class="price-was">${p.originalPrice}</span>` : '';
+
+  return `
+    <div class="product-card" data-tag="${p.tag}">
+      <div class="product-img">
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+        ${badgeHTML}
+        ${discountHTML}
+      </div>
+      <div class="product-body">
+        <div class="product-brand">${p.brand}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="stars">${p.stars} <span class="count">(${p.reviews})</span></div>
+        <div class="price-row">
+          <span class="price-now">${p.price}</span>
+          ${originalHTML}
+        </div>
+        <a href="${p.link}" target="_blank" rel="noopener" class="btn-amazon">
+          Buy on Amazon <span class="amz-logo">amazon</span>
+        </a>
+      </div>
+    </div>`;
+}
+
+/* ── Build a full section ── */
+function buildSection(sec) {
+  const filterHTML = sec.filter ? `
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCards('all', this, '${sec.id}')">All</button>
+      <button class="filter-btn" onclick="filterCards('men', this, '${sec.id}')">Men</button>
+      <button class="filter-btn" onclick="filterCards('women', this, '${sec.id}')">Women</button>
+      <button class="filter-btn" onclick="filterCards('unisex', this, '${sec.id}')">Unisex</button>
+    </div>` : '';
+
+  const cardsHTML = sec.products.map(p => buildCard(p)).join('');
+
+  return `
+    <section class="section" id="${sec.id}">
+      <div class="section-header">
+        <h2>${sec.title}</h2>
+        ${filterHTML}
+      </div>
+      <div class="products-grid" id="grid-${sec.id}">
+        ${cardsHTML}
+      </div>
+    </section>`;
+}
+
+/* ── Build the mid-page banner ── */
+function buildBanner() {
+  const b = SITE_CONFIG.banner;
+  return `
+    <div class="banner">
+      <div>
+        <h3>${b.title}</h3>
+        <p>${b.subtitle}</p>
+      </div>
+      <a href="${b.link}" target="_blank" rel="noopener" class="btn-banner">${b.btnText}</a>
+    </div>`;
+}
+
+/* ── Inject everything into the page ── */
+function buildPage() {
+  const cfg = SITE_CONFIG;
+
+  /* <title> */
+  document.title = `${cfg.name} — ${cfg.tagline}`;
+
+  /* Logo (nav + footer) */
+  const logoHTML = `${cfg.name}<span>.</span>`;
+  document.getElementById('siteLogo').innerHTML  = logoHTML;
+  document.getElementById('footerLogo').innerHTML = logoHTML;
+
+  /* Nav links from section ids */
+  document.getElementById('navLinks').innerHTML =
+    SECTIONS.map(s => `<a href="#${s.id}">${s.title.replace(/^[^\w]*/, '')}</a>`).join('');
+
+  /* Hero */
+  document.getElementById('heroEyebrow').textContent  = cfg.eyebrow;
+  document.getElementById('heroTitle').innerHTML      = cfg.heroTitle;
+  document.getElementById('heroSubtitle').textContent = cfg.heroSub;
+
+  /* Sections — inject banner after first section */
+  let html = '';
+  SECTIONS.forEach((sec, i) => {
+    html += buildSection(sec);
+    if (i === 0) html += buildBanner();
+  });
+  document.getElementById('allSections').innerHTML = html;
+
+  /* Footer */
+  document.getElementById('footerDesc').textContent    = cfg.footerDesc;
+  document.getElementById('footerCopy').textContent    = cfg.copyright;
+  document.getElementById('affiliateNote').textContent = cfg.affiliateNote;
+  document.getElementById('footerBrowse').innerHTML =
+    SECTIONS.map(s => `<li><a href="#${s.id}">${s.title.replace(/^[^\w]*/, '')}</a></li>`).join('');
+}
+
+/* ── Filter cards (for sections with filter: true) ── */
+function filterCards(tag, btn, sectionId) {
+  const grid = document.getElementById('grid-' + sectionId);
+  grid.querySelectorAll('.product-card').forEach(card => {
+    card.style.display = (tag === 'all' || card.dataset.tag === tag) ? 'flex' : 'none';
+  });
+  /* Reset all filter buttons in this section, activate clicked one */
+  btn.closest('.filter-bar').querySelectorAll('.filter-btn')
+    .forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+/* ── Dark / Light toggle ── */
 function toggleTheme() {
   const html = document.documentElement;
   const btn  = document.getElementById('themeBtn');
-  if (html.getAttribute('data-theme') === 'light') {
-    html.setAttribute('data-theme', 'dark');
-    btn.textContent = '☀️';
-    localStorage.setItem('pixelt_theme', 'dark');
-  } else {
-    html.setAttribute('data-theme', 'light');
-    btn.textContent = '🌙';
-    localStorage.setItem('pixelt_theme', 'light');
-  }
+  const dark = html.getAttribute('data-theme') !== 'dark';
+  html.setAttribute('data-theme', dark ? 'dark' : 'light');
+  btn.textContent = dark ? '☀️' : '🌙';
+  localStorage.setItem('pixelt_theme', dark ? 'dark' : 'light');
 }
 
-/* Remember theme across visits */
+/* Remember theme */
 (function () {
-  const saved = localStorage.getItem('pixelt_theme');
-  if (saved === 'dark') {
+  if (localStorage.getItem('pixelt_theme') === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
     document.getElementById('themeBtn').textContent = '☀️';
   }
 })();
 
+/* ── Boot ── */
+buildPage();
 
-/* ── FILTER (Trending section) ── */
-function filterCards(tag, btn) {
-  /* Update active button */
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-
-  /* Show / hide cards */
-  document.querySelectorAll('#trendingGrid .product-card').forEach(card => {
-    const cardTag = card.getAttribute('data-tag');
-    if (tag === 'all' || cardTag === tag) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-
-</script>
-<script>
-fetch("links.json")
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("p1").href = data.p1;
-    document.getElementById("p2").href = data.p2;
-    document.getElementById("p3").href = data.p3;
-    document.getElementById("p4").href = data.p4;
-    document.getElementById("p5").href = data.p5;
-    document.getElementById("p6").href = data.p6;
-    document.getElementById("p7").href = data.p7;
-    document.getElementById("p8").href = data.p8;
-    document.getElementById("p9").href = data.p9;
-    document.getElementById("p10").href = data.p10;
-    document.getElementById("p11").href = data.p11;
-    document.getElementById("p12").href = data.p12;
-    document.getElementById("p13").href = data.p13;
-    document.getElementById("p14").href = data.p14;
-  });
-</script>
-   <script>
-fetch("images.json")
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("img-p1").src = data.p1;
-    document.getElementById("img-p2").src = data.p2;
-    document.getElementById("img-p3").src = data.p3;
-    document.getElementById("img-p4").src = data.p4;
-    document.getElementById("img-p5").src = data.p5;
-    document.getElementById("img-p6").src = data.p6;
-    document.getElementById("img-p7").src = data.p7;
-    document.getElementById("img-p8").src = data.p8;
-    document.getElementById("img-p9").src = data.p9;
-    document.getElementById("img-p10").src = data.p10;
-    document.getElementById("img-p11").src = data.p11;
-    document.getElementById("img-p12").src = data.p12;
-    document.getElementById("img-p13").src = data.p13;
-    document.getElementById("img-p14").src = data.p14;
-  });
 </script>
 </body>
 </html>
